@@ -10,6 +10,7 @@ class DirectorsController < ApplicationController
     the_id = params.fetch("path_id")
 
     matching_directors = Director.where({ :id => the_id })
+    
     @the_director = matching_directors.at(0)
 
     render({ :template => "director_templates/show.html.erb" })
